@@ -109,6 +109,9 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wconversion -Wshadow -Wextra")
   # not yet ready for -Wsign-conversion
 
+  # Enable position-independent code.
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+
   if (JSONCPP_WITH_STRICT_ISO AND NOT JSONCPP_WITH_WARNING_AS_ERROR)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
   endif ()
